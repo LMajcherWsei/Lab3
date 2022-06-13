@@ -9,8 +9,10 @@ public class Infografika {
     public String adresStrony;
     public String adresGrafiki;
     public String adresMiniaturki;
-    public int szerokosc;
-    public int wysokosc;
+    /*public int szerokosc;
+    public int wysokosc;*/
+    public String szerokosc;
+    public String wysokosc;
 
     public void print() {
         System.out.println("Infografika:");
@@ -54,16 +56,16 @@ public class Infografika {
             pat = Pattern.compile("width=\"(.*)\" height");
             m = pat.matcher(tekst);
             if (m.find())
-                szerokosc = Integer.parseInt(m.group(1));
+                szerokosc = String.valueOf(Integer.parseInt(m.group(1)));
             else
-                szerokosc = 0;
+                szerokosc = String.valueOf(0);
 
             pat = Pattern.compile("height=\"(.*)\"");
             m = pat.matcher(tekst);
             if (m.find())
-                wysokosc = Integer.parseInt(m.group(1));
+                wysokosc = String.valueOf(Integer.parseInt(m.group(1)));
             else
-                wysokosc = 0;
+                wysokosc = String.valueOf(0);
         }
     }
 }
